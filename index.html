@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="brand">
+        <div class="brand__dot"></div>
+        <div>
+          <p class="eyebrow"></p>
+          <h1>Tic Tac Toe</h1>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="panel__row">
+          <div class="controls">
+            <label class="control">
+              <span>Mode</span>
+              <div class="segmented" id="modeToggle">
+                <button data-mode="pvp" class="active">vs Player</button>
+                <button data-mode="pvc">vs Computer</button>
+              </div>
+            </label>
+
+            <label class="control" id="sideControl">
+              <span>You play as</span>
+              <div class="segmented" id="playerSideToggle">
+                <button data-side="X" class="active">X</button>
+                <button data-side="O">O</button>
+              </div>
+            </label>
+
+            <label class="control" id="difficultyControl">
+              <span>Difficulty</span>
+              <div class="segmented">
+                <button data-difficulty="easy">Easy</button>
+                <button data-difficulty="normal" class="active">Normal</button>
+                <button data-difficulty="hard">Hard</button>
+              </div>
+            </label>
+
+            <label class="control">
+              <span>Theme</span>
+              <div class="segmented" id="themeToggle">
+                <button data-theme="dark" class="active">Dark</button>
+                <button data-theme="light">Light</button>
+              </div>
+            </label>
+
+            <div class="buttons">
+              <button id="newRound">New Round</button>
+              <button id="resetAll" class="ghost">Reset Scores</button>
+            </div>
+          </div>
+
+          <div class="scoreboard">
+            <div class="score-card">
+              <p class="label" id="labelX">Player X</p>
+              <p class="value" id="scoreX">0</p>
+            </div>
+            <div class="score-card">
+              <p class="label" id="labelO">Player O</p>
+              <p class="value" id="scoreO">0</p>
+            </div>
+            <div class="score-card muted">
+              <p class="label">Draws</p>
+              <p class="value" id="scoreDraw">0</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-bar">
+          <p id="statusText">X to move</p>
+          <div class="end-badge" id="endBadge" aria-live="polite"></div>
+          <div class="status-dots">
+            <span class="dot active" data-turn="X"></span>
+            <span class="dot" data-turn="O"></span>
+          </div>
+        </div>
+
+        <div class="board" id="board">
+          <button class="cell" data-index="0"></button>
+          <button class="cell" data-index="1"></button>
+          <button class="cell" data-index="2"></button>
+          <button class="cell" data-index="3"></button>
+          <button class="cell" data-index="4"></button>
+          <button class="cell" data-index="5"></button>
+          <button class="cell" data-index="6"></button>
+          <button class="cell" data-index="7"></button>
+          <button class="cell" data-index="8"></button>
+          <div class="win-line" id="winLine"></div>
+          <div class="overlay" id="overlay">
+            <div class="overlay-card">
+              <p id="overlayText">Result</p>
+              <button id="playAgain">Play again</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footnote">
+        <p></p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
